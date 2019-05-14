@@ -98,7 +98,7 @@ class TrainingSchedule:
         D_lrate_base            = 0.001,    # Learning rate for the discriminator.
         D_lrate_dict            = {},       # Resolution-specific overrides.
         tick_kimg_base          = 160,      # Default interval of progress snapshots.
-        tick_kimg_dict          = {4: 160, 8:140, 16:120, 32:100, 64:80, 128:60, 256:40, 512:20, 1024:10}): # Resolution-specific overrides.
+        tick_kimg_dict          = {4: 32, 8:28, 16:24, 32:20, 64:16, 128:12, 256:8, 512:4, 1024:2}): # Resolution-specific overrides.
 
         # Training phase.
         self.kimg = cur_nimg / 1000.0
@@ -139,7 +139,7 @@ def train_progressive_gan(
     mirror_augment          = False,        # Enable mirror augment?
     drange_net              = [-1,1],       # Dynamic range used when feeding image data to the networks.
     image_snapshot_ticks    = 1,            # How often to export image snapshots?
-    network_snapshot_ticks  = 10,           # How often to export network snapshots?
+    network_snapshot_ticks  = 5,           # How often to export network snapshots?
     save_tf_graph           = False,        # Include full TensorFlow computation graph in the tfevents file?
     save_weight_histograms  = False,        # Include weight histograms in the tfevents file?
     resume_run_id           = None,         # Run ID or network pkl to resume training from, None = start from scratch.
