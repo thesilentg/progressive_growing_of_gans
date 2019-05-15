@@ -98,7 +98,7 @@ class TrainingSchedule:
         D_lrate_base            = 0.001,    # Learning rate for the discriminator.
         D_lrate_dict            = {},       # Resolution-specific overrides.
         tick_kimg_base          = 160,      # Default interval of progress snapshots.
-        tick_kimg_dict          = {4: 32, 8:28, 16:24, 32:20, 64:16, 128:12, 256:8, 512:4, 1024:2}): # Resolution-specific overrides.
+        tick_kimg_dict          = {4: 160, 8:140, 16:120, 32:100, 64:80, 128:60, 256:40, 512:20, 1024:10}): # Resolution-specific overrides.
 
         # Training phase.
         self.kimg = cur_nimg / 1000.0
